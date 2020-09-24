@@ -32,7 +32,7 @@ pip3 install .
 
 ## Usage
 
-To understand the operating mode of the plot, checkout program `join.py` in the `example` directory.
+To understand the operating mode of Drag-o-meter and its API, checkout program `join.py` in the `example` directory.
 
 Navigate to the `example` directory, open the command line and do:
 
@@ -40,7 +40,7 @@ Navigate to the `example` directory, open the command line and do:
 dragometer join.py
 ```
 
-A SUMO simulation about two platooning vehicles will appear. The simulation is repeated twice. In the second, the succeeding vehicle uses the Slipstream device to update its drag coefficient.
+A SUMO simulation about two platooning vehicles appears. The simulation is repeated twice. In the second one, the succeeding vehicle uses the Slipstream device to update its drag coefficient.
 
 At the end of the simulations, Drag-o-meter should look as follows:
 
@@ -53,7 +53,9 @@ The relevant parts of `join.py` are:
 
 That's it! When writing custom programs, you are only required to have a `main` method formatted as before.
 
-## API endpoints
+## API methods
+
+To use the API methods, you program must have an instance object of the API, which must be passed as parameter to the `main` function (see previous section). The API methods are callable through the instance object. The following list contains all method signatures.
 
 ```
 add_plot(ID)
@@ -97,7 +99,7 @@ set_y_axis_title(ID, title)
 - ID: str
 - tile: str
 
-Sets a title to a plot's x-axis.
+Sets a title to a plot's y-axis.
 
 ```
 set_x_max(ID, xMax)
