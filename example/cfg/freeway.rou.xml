@@ -1,0 +1,44 @@
+<!--
+How to assign a device and use it:
+https://sumo.dlr.de/docs/Definition_of_Vehicles,_Vehicle_Types,_and_Routes.html#devices
+SUMO electric vehicle:
+https://sumo.dlr.de/docs/Models/Electric.html
+Tesla:
+https://evcompare.io/cars/tesla/tesla_model_s_p85/
+https://www.tesla.com/sites/default/files/blog_attachments/the-slipperiest-car-on-the-road.pdf
+-->
+
+<routes>
+
+    <vType id="car"
+           length="4.971"
+           width="1.963"
+           height="1.445"
+           accel="4.4"
+           decel="5"
+           maxSpeed="58.33"
+
+           minGap="0"
+           lanesCount="4"
+           carFollowModel="CC">
+
+        <param key="has.battery.device" value="true"/>
+        <param key="maximumBatteryCapacity" value="85000"/>
+        <param key="maximumPower" value="350000"/>
+        <param key="vehicleMass" value="2112"/>
+        <param key="frontSurfaceArea" value="2.34"/>
+        <param key="airDragCoefficient" value="0.24"/>
+        <param key="internalMomentOfInertia" value="0"/>
+        <param key="radialDragCoefficient" value="0"/>
+        <param key="rollDragCoefficient" value="0.05"/>
+        <param key="constantPowerIntake" value="0"/>
+        <param key="propulsionEfficiency" value="0.9"/>
+        <param key="recuperationEfficiency" value="0"/>
+        <param key="stoppingTreshold" value="0.1"/>
+
+        <param key="dragCoefficient" value="0.24"/>
+    </vType>
+
+    <route id="platoon_route"
+           edges="edge_0_0 edge_0_1 edge_0_2 edge_0_3 edge_1_0 edge_1_1 edge_1_2 edge_1_3 edge_2_0 edge_2_1 edge_2_2 edge_2_3 edge_3_0 edge_3_1 edge_3_2 edge_3_3 edge_4_0 edge_4_1 edge_4_4 edge_4_6 absorption_4"/>
+</routes>
